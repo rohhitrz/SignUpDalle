@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
+    
+</head>
+<body>
+
+   
+   
+      <div class="container">
+       
+        <form action="action.php" id="loginForm" onsubmit="return validateForm()">
+          <h1>  Sign up for Dalle.AI </h1>
+          <br>
+          <input type="text" id="username" class="form-control" placeholder="Enter your name...">
+          <input type="email" id="username" class="form-control" placeholder="Enter your email...">
+          <input type="text" id="username" class="form-control" placeholder="Enter your Username...">
+          <input type="password" id="password" class="form-control" placeholder="Enter your Password...">
+          <input type="password" id="cpassword" class="form-control" placeholder="confirm Password...">
+          
+          <div class="g-recaptcha"
+				data-sitekey="6LeS6jYlAAAAAKyzgYnrWDnW_6LEyZt8nyI7JWIU" data-callback="onSubmit" data-size="normal" data-theme="light" required>
+			</div>
+            <br>
+          <button type="submit">Submit</button>
+
+          <script src="script.js"></script>
+          <script>
+            function validateForm() {
+            var password = document.getElementById("password").value;
+            var cpassword = document.getElementById("cpassword").value;
+            
+            if (password != cpassword) {
+                alert("Password and Confirm Password do not match!");
+                return false;
+            }
+            }
+            </script>
+          
+
+        </form>
+      </div>
+</body>
+</html>
